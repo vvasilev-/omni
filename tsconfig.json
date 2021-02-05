@@ -1,0 +1,22 @@
+{
+    "include": ["resources/ts/**/*"],
+    "compilerOptions": {
+        "target": "es5",
+        "module": "esnext",
+        "lib": ["dom", "esnext"],
+        "allowJs": true,
+        "jsx": "react",
+        "isolatedModules": true,
+        "strict": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": false,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+    }
+}
