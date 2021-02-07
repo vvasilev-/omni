@@ -10,7 +10,7 @@ const app = document.getElementById('app');
 ReactDOM.render(
     <InertiaApp
         initialPage={JSON.parse(app?.dataset.page || '')}
-        resolveComponent={(name) => import(`./pages/${name}`).then((module) => module.default)}
+        resolveComponent={(name) => import(`./modules/${name}`).then((module) => module.default)}
     />,
     app
 );
