@@ -1,4 +1,7 @@
 module.exports = {
+    corePlugins: {
+        ringWidth: false,
+    },
     purge: [
         './resources/**/*.blade.php',
         './resources/**/*.ts',
