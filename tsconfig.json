@@ -17,6 +17,10 @@
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": false,
         "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": "resources/ts",
+        "paths": {
+            "@/*": ["*"]
+        }
     }
 }
