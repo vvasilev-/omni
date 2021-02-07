@@ -8,12 +8,13 @@ import cx from 'classnames';
  * @param  {Object} props
  * @param  {string} props.className
  * @param  {...Object} props.otherProps
+ * @param  {...Object} props.otherProps
  * @return {React.ReactElement}
  */
-export const FormInput: React.FunctionComponent<React.InputHTMLAttributes<any>> = ({
+export const FormInput = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<any>>(({
     className,
     ...otherProps
-}): React.ReactElement => {
+}, forwaredRef): React.ReactElement => {
     return (
         <input
             className={cx([
@@ -28,9 +29,10 @@ export const FormInput: React.FunctionComponent<React.InputHTMLAttributes<any>> 
                 'focus:outline-none',
                 className,
             ])}
+            ref={forwaredRef}
             {...otherProps}
         />
     );
-};
+});
 
 export default FormInput;
