@@ -10,6 +10,7 @@ const variants: Record<Variant, VariantClasses> = {
         'text-white',
         'hover:bg-blue-800',
         'focus:bg-blue-800',
+        'disabled:bg-blue-900',
     ],
 };
 
