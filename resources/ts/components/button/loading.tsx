@@ -21,9 +21,7 @@ export const Loading: React.FunctionComponent<LoadingProps> = ({
     }
 
     return (
-        <IconLoader
-            className="animate-spin"
-        />
+        <IconLoader className="animate-spin" />
     );
 };
 
