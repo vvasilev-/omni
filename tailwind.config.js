@@ -12,7 +12,10 @@ module.exports = {
         extend: {},
     },
     variants: {
-        extend: {},
+        extend: {
+            backgroundColor: ['disabled'],
+            opacity: ['disabled'],
+        },
     },
     plugins: [],
 };
