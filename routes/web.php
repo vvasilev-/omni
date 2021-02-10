@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use App\Http\Web\Auth\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,12 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('auth/pages/login');
-});
+Route::get('/', fn() => 'Welcome')
+    ->middleware(['auth']);
+
+Route::get('/auth/login', [LoginController::class, 'showLoginForm'])
+    ->middleware(['guest'])
+    ->name('auth.login');
+
+Route::post('/auth/login', [LoginController::class, 'login'])
+    ->middleware(['guest']);
