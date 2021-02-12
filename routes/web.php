@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Web\Auth\Controllers\LoginController;
+use App\Http\Web\Auth\Controllers\LogoutController;
 use App\Http\Web\Dashboard\Controllers\DashboardController;
 
 /*
@@ -16,7 +17,7 @@ use App\Http\Web\Dashboard\Controllers\DashboardController;
 */
 
 /**
- * Login
+ * Authentication
  */
 Route::get('/auth/login', [LoginController::class, 'showLoginForm'])
     ->middleware(['guest'])
@@ -24,6 +25,10 @@ Route::get('/auth/login', [LoginController::class, 'showLoginForm'])
 
 Route::post('/auth/login', [LoginController::class, 'login'])
     ->middleware(['guest']);
+
+Route::post('/auth/logout', [LogoutController::class, 'logout'])
+    ->middleware(['auth'])
+    ->name('auth.logout');
 
 /**
  * Dashboard
