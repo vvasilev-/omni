@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Web\Auth\Controllers\LoginController;
+use App\Http\Web\Dashboard\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +15,21 @@ use App\Http\Web\Auth\Controllers\LoginController;
 |
 */
 
-Route::get('/', fn() => 'Welcome')
-    ->middleware(['auth']);
-
+/**
+ * Login
+ */
 Route::get('/auth/login', [LoginController::class, 'showLoginForm'])
     ->middleware(['guest'])
     ->name('auth.login');
 
 Route::post('/auth/login', [LoginController::class, 'login'])
     ->middleware(['guest']);
+
+/**
+ * Dashboard
+ */
+Route::redirect('/', '/dashboard');
+
+Route::get('/dashboard', DashboardController::class)
+    ->middleware(['auth'])
+    ->name('dashboard');
